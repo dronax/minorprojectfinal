@@ -1,0 +1,21 @@
+{% extends 'res.html' %}
+
+{%load static%}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'result.css' %}">
+<body>
+<div class = "result_box">
+    <div class ='icon'>
+        <i class ="fas fa-crown"></i>
+
+<div class ='result'>
+    <h3>Physics Score:</h3>{{phy_score}}<br>
+    <h3>Chemistry Score:</h3>{{chem_score}}<br>
+    <h3>Maths Score:</h3>{{math_score}}<br>
+    <h3>English Score:</h3>{{eng_score}}<br>
+    <h3>Total Score:</h3>{{total_score}}<br>
+</div>
+    </div>
+
+</div>
+</body>

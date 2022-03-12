@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <link rel="stylesheet" type="text/css" href="{% static 'login/style.css' %}">
+        <style>
+            button {
+              display: inline-block;
+              background-color: #7b38d8;
+              border-radius: 5px;
+              border: 4px double #cccccc;
+              color: #eeeeee;
+              text-align: center;
+              font-size: 10px;
+              padding: 10px;
+              width: 100px;
+              -webkit-transition: all 0.5s;
+              -moz-transition: all 0.5s;
+              -o-transition: all 0.5s;
+              transition: all 0.5s;
+              cursor: pointer;
+              margin: 2px;
+            }
+            
+        </style>
+    </head>
+    <body id='bg' style="background-image:url('{% static 'image/back.jpg'%}');">
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <button  type="submit"> <a href="/basequestion">Take Exam</a></button>
+        <br>
+        <br>
+        <button style=background-color:blue; type="submit"> <a href="/performance">View Previous Performance</a></button>
+        
+        <script src="" async defer></script>
+    </body>
+</html>

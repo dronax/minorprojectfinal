@@ -1,0 +1,28 @@
+
+{%load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'performance.css' %}">
+<body bgcolor = #D6EEEE>
+<h3>PAST PERFORMANCE</h3>
+
+<table>
+    <tr>
+      <th>UserID</th>
+      <th>Physics</th>
+      <th>Chemistry</th>
+      <th>Maths</th>
+      <th>English</th>
+      <th>Total</th>
+    </tr>
+    {% for i in performance%}
+    <tr>
+      <td>{{i.USERID}}</td>
+      <td>{{i.Physics}}</td>
+      <td>{{i.Chemistry}}</td>
+      <td>{{i.Maths}}</td>
+      <td>{{i.English}}</td>
+      <td>{{i.Total}}</td>
+    </tr>
+    {%endfor%}
+      
+  </table> 
+</body>

@@ -1,0 +1,71 @@
+{% extends 'next.html' %} 
+{% load static %}
+
+<html>
+    <head>
+        <title>
+            Question {% block title %}{% endblock title %}
+        </title>
+        <link rel = "stylesheet" type = "text/css" href = "{% static "style.css"%}" > 
+    </head>
+    <div class="twoContainer">
+    <body>
+        <div class="flex-container">
+        <div class="twoContainer">
+            
+        <form method = 'POST' action = 'basequestion'>
+        {% csrf_token %}
+        {% for questions in questions %}
+        <div id = "set">
+            <div class = "form-group">
+                <h3> {{questions.question}} </h3>
+                
+            </div>
+            <div id = "question">
+                
+                
+                
+            <div class ="form-check">
+            
+                <div class="form-check">
+                <input type = "radio" name = "{{questions.question}}" value = 1>
+                <label for ='option-1'> {{questions.op1}} </label>
+                </div>
+                <div class="form-check">
+                <input type = "radio" name = "{{questions.question}}" value = 2>
+                <label for ='option-2'> {{questions.op2}} </label>
+                </div>
+                <div class="form-check">
+                <input type = "radio" name = "{{questions.question}}" value = 3>
+                <label for ='option-3'> {{questions.op3}} </label>
+                </div>
+                <div class="form-check">
+                <input type = "radio" name = "{{questions.question}}" value = 4>
+                <label for ='option-4'> {{questions.op4}} </label>
+                </div>
+            </div>
+        </div>
+        <img src ='data:image/png;base64,{{data}}'alt=""height="250",width="250"align="right">
+    </div>
+    </div> 
+</div>
+    <br>
+    <div id = 'box'>
+    Probability={{probability}}%
+    </div>
+    <br>
+    {% endfor%}
+</div>
+    
+    <button type = 'submit' name = 'loop_var' value = 1 > Next </button>
+    
+</form>
+
+
+    
+
+
+    
+    </div>
+</div>
+</html>

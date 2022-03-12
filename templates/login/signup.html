@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %} Assesment | {{ title }} {% endblock title %}
+{% block content %}
+{% if not request.user.is_active %}
+
+     <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-sm-8 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4">
+              <h4 class='/signup'Create a new account</h4>
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    <strong>Message:</strong> {{ message }}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                {% endfor %}
+              <form class="mb-3" method="POST" action="">
+                {% csrf_token %}
+		        {{form|crispy}}
+		         
+            <form action="/signup" method="post">
+              {% csrf_token %}
+              <div class="form-group">  
+                <label for="">Username *</label>
+                <input type="text"id="username" name="username" placeholder="Create a username" required>
+              </div>
+    
+    
+    
+                <div class="form-group">
+                <label for="">First Name *</label>
+                <input type="text"id="fname" name="fname" placeholder="Enter Your First Name" required>
+                </div>
+    
+    
+    
+                <div class="form-group">
+                <label for="">Middle Name</label>
+                <input type="text"id="mname" name="mname" placeholder="Enter Your Middle Name">
+                </div>
+    
+    
+    
+                <div class="form-group">
+                <label for="">Last Name *</label>
+                <input type="text"id="lname" name="lname" placeholder="Enter Your Last Name" required>
+                </div>
+    
+    
+    
+                <div class="form-group">
+                <label for="">Date  Of Birth *</label>
+                <input type="date"id="dob" name="dob" placeholder="Enter your Date of birth" required>
+                </div>
+                <div class="form-group">
+                <label for="">Email Address *</label>
+                <input type="email"id="email" name="email" placeholder="Enter Your Email Address" required>
+                </div>
+                <div class="form-group">
+                <label for="">Password *</label>
+                <input type="password"id="pass1" name="pass1" placeholder="Create a Password" required>
+                </div>
+                <div class="form-group">
+                <label for="">Confirm Password * </label>
+                <input type="password"id="pass2" name="pass2" placeholder="Confirm Your Password" required>
+                </div>
+                <p> * Fields are Required </p>
+                <input type="submit" class="btn btn-info btn-block mb-3" value="Sign Up">
+              </form>
+              <div class="text-center">
+                <p>or ...</p>
+                <a href='/signin' class="btn btn-success">Login</a>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+{% else %}
+
+    <section id="section-jumbotron" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center">
+      <div class="container text-center">
+        <h1 class="display-1 text-info">Assesment</h1>
+        
+        <p class="lead">We organize MCQ basesd Assesment.</p>
+        <a href='/basequestion' class="btn btn-lg btn-info mt-1">Take Exam</a>
+        <a href='/about' class="btn btn-lg btn-info mt-1">About Us</a>
+      </div>  
+    </section>
+
+{% endif %}
+
+{% endblock content %}

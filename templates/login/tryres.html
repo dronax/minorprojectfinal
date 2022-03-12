@@ -1,0 +1,20 @@
+{% load static %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{% static 'result.css' %}">
+
+
+<div class = "result_box">
+    <div class ='icon'>
+        <i class ="fas fa-crown"></i>
+<div class = "complete_text">You've completed the Test!</div>
+<div class ='score_text'>
+    <h3>Physics Score:</h3>{{phy_score}}<br>
+    <h3>Chemistry Score:</h3>{{chem_score}}<br>
+    <h3>Maths Score:</h3>{{math_score}}<br>
+    <h3>English Score:</h3>{{eng_score}}<br>
+    <h3>Total Score:</h3>{{total_score}}<br>
+</div>
+    </div>
+
+</div>
